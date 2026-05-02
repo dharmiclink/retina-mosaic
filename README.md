@@ -47,3 +47,4 @@ flutter run
 ## Validation Docs
 
 - Capture-quality labeling rubric: [`docs/validation/nexeye-capture-quality-rubric.md`](/Users/tarmarajapadrasono/retina-mosaic/docs/validation/nexeye-capture-quality-rubric.md)
+- Remote contributor onboarding: [`docs/architecture/remote-contributor-onboarding.md`](/Users/tarmarajapadrasono/retina-mosaic/docs/architecture/remote-contributor-onboarding.md)
