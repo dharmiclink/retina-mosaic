@@ -2,6 +2,12 @@
 set -euo pipefail
 
 cd "$(dirname "$0")/../.."
-flutter analyze apps/mobile
-flutter test apps/mobile
-flutter test packages/nexthria_domain
+(
+  cd apps/mobile
+  flutter analyze
+  flutter test
+)
+(
+  cd packages/nexthria_domain
+  flutter test
+)
