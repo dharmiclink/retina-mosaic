@@ -9,7 +9,8 @@ Phase 0 wires the capture surface, operator guidance overlay, scratch-card mosai
 ## Run
 
 ```bash
-cd /Users/tarmarajapadrasono/retina-mosaic
+git clone https://github.com/dharmiclink/retina-mosaic.git
+cd retina-mosaic
 dart pub get
 dart run melos bootstrap
 cd apps/mobile

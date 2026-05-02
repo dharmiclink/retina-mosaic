@@ -14,7 +14,7 @@ Phase 0 benchmark harness is file-driven and uses prerecorded retinal sequences.
 
 - prerecorded `.mp4` or extracted retinal frame folders in `assets/demo_sequences`
 - synthetic session configuration payloads from `nexthria_domain`
-- handheld capture manifests labeled with the rubric in [`nexeye-capture-quality-rubric.md`](/Users/tarmarajapadrasono/retina-mosaic/docs/validation/nexeye-capture-quality-rubric.md)
+- handheld capture manifests labeled with the rubric in [`nexeye-capture-quality-rubric.md`](nexeye-capture-quality-rubric.md)
 - fundus-camera reference folders used as quality ceiling examples, not as direct capture accept/reject labels
 
 ## Outputs
@@ -27,21 +27,23 @@ Phase 0 benchmark harness is file-driven and uses prerecorded retinal sequences.
 Generate a pending-review template from a dataset folder with:
 
 ```bash
-cd /Users/tarmarajapadrasono/retina-mosaic/packages/nexthria_bench
+cd packages/nexthria_bench
 dart run bin/generate_label_manifest.dart \
-  "/Users/tarmarajapadrasono/Downloads/DR Sample Images" \
-  "/Users/tarmarajapadrasono/retina-mosaic/docs/validation/manifests/dr-sample-images-template.json"
+  "/path/to/dataset-root" \
+  "../../docs/validation/manifests/dr-sample-images-template.json"
 ```
 
 This template is for manual rubric labeling and starts with `pendingReview` entries.
+Generated manifest paths are dataset-relative so local machine paths do not leak into version control.
 
 Enrich a manifest with offline quality scores from the current heuristic capture gate:
 
 ```bash
-cd /Users/tarmarajapadrasono/retina-mosaic/packages/nexthria_bench
+cd packages/nexthria_bench
 dart run bin/enrich_label_manifest.dart \
-  "/Users/tarmarajapadrasono/retina-mosaic/docs/validation/manifests/dr-sample-images-template.json" \
-  "/Users/tarmarajapadrasono/retina-mosaic/docs/validation/manifests/dr-sample-images-scored.json"
+  "../../docs/validation/manifests/dr-sample-images-template.json" \
+  "../../docs/validation/manifests/dr-sample-images-scored.json" \
+  "/path/to/dataset-root"
 ```
 
 This does not assign the human `accept / borderline / reject` label.

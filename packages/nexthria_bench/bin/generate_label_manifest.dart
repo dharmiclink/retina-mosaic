@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:nexthria_bench/nexthria_bench.dart';
 import 'package:nexthria_domain/nexthria_domain.dart';
+import 'package:path/path.dart' as p;
 
 void main(List<String> args) {
   if (args.length < 2) {
@@ -48,7 +49,7 @@ void main(List<String> args) {
         return CaptureGateRecord(
           id: stem,
           label: CaptureLabel.pendingReview,
-          path: file.path,
+          path: p.relative(file.path, from: datasetRoot.path),
           eyeLaterality: _parseLaterality(basename).name,
           sourceType: 'fundus_camera_reference',
           drGradeReference: parent,

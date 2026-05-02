@@ -22,7 +22,8 @@ Phase 0 monorepo for the Nexthria live-painting retinal mosaicking system descri
 ## Quick Start
 
 ```bash
-cd /Users/tarmarajapadrasono/retina-mosaic
+git clone https://github.com/dharmiclink/retina-mosaic.git
+cd retina-mosaic
 dart pub get
 dart run melos bootstrap
 cd apps/mobile
@@ -46,5 +47,5 @@ flutter run
 
 ## Validation Docs
 
-- Capture-quality labeling rubric: [`docs/validation/nexeye-capture-quality-rubric.md`](/Users/tarmarajapadrasono/retina-mosaic/docs/validation/nexeye-capture-quality-rubric.md)
-- Remote contributor onboarding: [`docs/architecture/remote-contributor-onboarding.md`](/Users/tarmarajapadrasono/retina-mosaic/docs/architecture/remote-contributor-onboarding.md)
+- Capture-quality labeling rubric: [`docs/validation/nexeye-capture-quality-rubric.md`](docs/validation/nexeye-capture-quality-rubric.md)
+- Remote contributor onboarding: [`docs/architecture/remote-contributor-onboarding.md`](docs/architecture/remote-contributor-onboarding.md)

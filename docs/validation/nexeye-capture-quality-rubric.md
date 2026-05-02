@@ -91,7 +91,7 @@ Recommended manifest columns for calibration:
 | Field | Meaning |
 |---|---|
 | `id` | unique image id |
-| `path` | local image path |
+| `path` | dataset-relative or absolute image path |
 | `eyeLaterality` | `left` or `right` |
 | `sourceType` | `handheld_lens` or `fundus_camera_reference` |
 | `label` | `accept`, `borderline`, or `reject` |
@@ -116,7 +116,7 @@ Current app metrics already align to this rubric:
 - `posteriorPoleFraming`
 - `stableFocus`
 
-This rubric is the human-label layer that should be used to calibrate the app thresholds in [`/Users/tarmarajapadrasono/retina-mosaic/apps/mobile/lib/features/capture/live_utility_scorer.dart`](/Users/tarmarajapadrasono/retina-mosaic/apps/mobile/lib/features/capture/live_utility_scorer.dart).
+This rubric is the human-label layer that should be used to calibrate the app thresholds in `apps/mobile/lib/features/capture/live_utility_scorer.dart`.
 
 ## Safe Enhancement Policy
 

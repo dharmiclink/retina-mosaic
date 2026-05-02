@@ -13,6 +13,7 @@ dependencies:
   image: ^4.5.4
   nexthria_domain:
     path: ../nexthria_domain
+  path: ^1.9.1
 
 dev_dependencies:
   flutter_test:

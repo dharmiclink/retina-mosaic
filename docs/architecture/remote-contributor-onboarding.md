@@ -83,7 +83,8 @@ dart --version
 Bootstrap the workspace:
 
 ```bash
-cd /Users/tarmarajapadrasono/retina-mosaic
+git clone https://github.com/dharmiclink/retina-mosaic.git
+cd retina-mosaic
 dart pub get
 dart run melos bootstrap
 ```
@@ -91,7 +92,7 @@ dart run melos bootstrap
 Run the main validation set:
 
 ```bash
-cd /Users/tarmarajapadrasono/retina-mosaic/apps/mobile
+cd apps/mobile
 flutter analyze
 flutter test
 ```
@@ -99,7 +100,7 @@ flutter test
 Validate the benchmark package:
 
 ```bash
-cd /Users/tarmarajapadrasono/retina-mosaic/packages/nexthria_bench
+cd packages/nexthria_bench
 dart analyze
 flutter test
 ```
@@ -120,7 +121,7 @@ Best for:
 Typical run path:
 
 ```bash
-cd /Users/tarmarajapadrasono/retina-mosaic/apps/mobile
+cd apps/mobile
 flutter run -d chrome
 ```
 
@@ -154,13 +155,13 @@ Reference-quality images:
 
 Capture-quality labeling:
 
-- use the rubric in [`nexeye-capture-quality-rubric.md`](/Users/tarmarajapadrasono/retina-mosaic/docs/validation/nexeye-capture-quality-rubric.md)
-- use the benchmark workflow in [`benchmark-plan.md`](/Users/tarmarajapadrasono/retina-mosaic/docs/validation/benchmark-plan.md)
+- use the rubric in [`nexeye-capture-quality-rubric.md`](../validation/nexeye-capture-quality-rubric.md)
+- use the benchmark workflow in [`benchmark-plan.md`](../validation/benchmark-plan.md)
 
 Generate a manifest template:
 
 ```bash
-cd /Users/tarmarajapadrasono/retina-mosaic/packages/nexthria_bench
+cd packages/nexthria_bench
 dart run bin/generate_label_manifest.dart \
   "/path/to/dataset" \
   "/path/to/output-manifest.json"
@@ -169,10 +170,11 @@ dart run bin/generate_label_manifest.dart \
 Enrich an existing manifest with current heuristic scores:
 
 ```bash
-cd /Users/tarmarajapadrasono/retina-mosaic/packages/nexthria_bench
+cd packages/nexthria_bench
 dart run bin/enrich_label_manifest.dart \
   "/path/to/input-manifest.json" \
-  "/path/to/output-manifest.json"
+  "/path/to/output-manifest.json" \
+  "/path/to/dataset-root"
 ```
 
 ## Safe Enhancement Policy
@@ -216,9 +218,9 @@ Tasks that should be paired with local validation support:
 Before opening a PR, contributors should run:
 
 ```bash
-cd /Users/tarmarajapadrasono/retina-mosaic
+cd retina-mosaic
 dart run melos bootstrap
-cd /Users/tarmarajapadrasono/retina-mosaic/apps/mobile
+cd apps/mobile
 flutter analyze
 flutter test
 ```
