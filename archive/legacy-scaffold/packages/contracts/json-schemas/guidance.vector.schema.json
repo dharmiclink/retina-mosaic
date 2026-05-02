@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "guidance.vector",
+  "type": "object",
+  "required": ["type", "dx", "dy", "message"],
+  "properties": {
+    "type": { "const": "guidance.vector" },
+    "dx": { "type": "number" },
+    "dy": { "type": "number" },
+    "message": { "type": "string" }
+  }
+}

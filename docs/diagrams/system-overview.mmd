@@ -1,0 +1,9 @@
+flowchart LR
+    Camera["60 fps retinal video stream"] --> Scorer["Utility scorer"]
+    Scorer --> Bucket["Gold-frame bucket"]
+    Bucket --> Mosaicking["Non-linear mosaicking engine"]
+    Mosaicking --> Canvas["Scratch-card mosaic canvas"]
+    Mosaicking --> Guidance["Operator-vector guidance"]
+    Guidance --> App["Flutter mobile app"]
+    Canvas --> App
+    App --> Export["JPEG + gold frames + metadata export"]

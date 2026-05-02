@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "created_at": "2026-02-12T08:35:48.593611+00:00",
+  "label_mode": "retina_reason",
+  "feature_names": [
+    "area_score",
+    "shape_score",
+    "fill_score",
+    "center_score",
+    "ring_score",
+    "color_score",
+    "saturation_score",
+    "texture_score"
+  ],
+  "features": [
+    "area_score",
+    "shape_score",
+    "fill_score",
+    "center_score",
+    "ring_score",
+    "color_score",
+    "saturation_score",
+    "texture_score"
+  ],
+  "weights": [
+    -0.07724106,
+    2.52853878,
+    0.14513829,
+    1.97559053,
+    0.31801618,
+    0.22122907,
+    0.19614464,
+    0.42064023
+  ],
+  "bias": 2.56293066,
+  "threshold": 0.25,
+  "mean": {
+    "area_score": 0.80560156,
+    "shape_score": 0.87403125,
+    "fill_score": 0.640625,
+    "center_score": 0.99965625,
+    "ring_score": 0.58543437,
+    "color_score": 0.66553281,
+    "saturation_score": 0.93193594,
+    "texture_score": 0.68374219
+  },
+  "std": {
+    "area_score": 0.14623934,
+    "shape_score": 0.17538752,
+    "fill_score": 0.47981727,
+    "center_score": 0.00021786,
+    "ring_score": 0.20356387,
+    "color_score": 0.22605747,
+    "saturation_score": 0.09088529,
+    "texture_score": 0.4224938
+  },
+  "dataset": {
+    "samples": 80,
+    "positive": 58,
+    "negative": 22,
+    "sessions_used": [
+      "ses_8cf061f2",
+      "ses_dbbc2f2c"
+    ]
+  },
+  "train_metrics": {
+    "accuracy": 0.9844,
+    "precision": 0.9787,
+    "recall": 1.0,
+    "f1": 0.9892,
+    "tp": 46,
+    "tn": 17,
+    "fp": 1,
+    "fn": 0
+  },
+  "val_metrics": {
+    "accuracy": 0.9375,
+    "precision": 1.0,
+    "recall": 0.9167,
+    "f1": 0.9565,
+    "tp": 11,
+    "tn": 4,
+    "fp": 0,
+    "fn": 1
+  },
+  "training": {
+    "epochs": 1400,
+    "learning_rate": 0.08,
+    "l2": 0.001,
+    "seed": 42
+  }
+}

@@ -1,0 +1,27 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+      - 'codex/**'
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - name: Resolve workspace
+        run: |
+          dart pub get
+          dart run melos bootstrap
+      - name: Analyze
+        run: flutter analyze apps/mobile
+      - name: Test
+        run: |
+          flutter test apps/mobile
+          flutter test packages/nexthria_domain

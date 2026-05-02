@@ -1,0 +1,10 @@
+name: retina_mosaic_workspace
+description: Nexthria live-painting retinal mosaicking workspace.
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: ^3.11.1
+
+dev_dependencies:
+  melos: ^7.0.0

@@ -1,0 +1,63 @@
+openapi: 3.0.3
+info:
+  title: Retina Mosaic API
+  version: 0.1.0
+paths:
+  /v1/sessions:
+    post:
+      summary: Create session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [patient_ref, device_id, mode]
+              properties:
+                patient_ref: { type: string }
+                device_id: { type: string }
+                mode: { type: string, example: video_mosaic }
+      responses:
+        "200":
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  session_id: { type: string }
+                  ws_url: { type: string }
+                  upload_fps: { type: integer }
+  /v1/sessions/{session_id}:
+    get:
+      summary: Session status
+      parameters:
+        - in: path
+          name: session_id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Session snapshot
+  /v1/sessions/{session_id}/complete:
+    post:
+      summary: Complete session
+      parameters:
+        - in: path
+          name: session_id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Completion accepted
+  /v1/sessions/{session_id}/report:
+    get:
+      summary: Session report
+      parameters:
+        - in: path
+          name: session_id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Report payload

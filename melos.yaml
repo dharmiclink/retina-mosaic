@@ -1,0 +1,26 @@
+name: retina_mosaic
+
+packages:
+  - apps/mobile
+  - packages/nexthria_cv
+  - packages/nexthria_domain
+  - packages/nexthria_ui
+  - packages/nexthria_bench
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+
+scripts:
+  analyze:
+    run: flutter analyze .
+    description: Analyze the mobile app workspace.
+    packageFilters:
+      dirExists:
+        - lib
+  test:
+    run: flutter test
+    description: Run package and app tests.
+    packageFilters:
+      dirExists:
+        - test

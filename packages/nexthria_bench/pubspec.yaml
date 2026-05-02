@@ -1,0 +1,20 @@
+name: nexthria_bench
+description: Benchmark harness for prerecorded retinal sequences and phase-zero CV stubs.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.11.1
+  flutter: '>=3.22.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image: ^4.5.4
+  nexthria_domain:
+    path: ../nexthria_domain
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
